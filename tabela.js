@@ -3,6 +3,12 @@ let guardar_Dados = [];
 let conter = 0;
 var chamar_busca = 0;
 
+var editar = function(){
+    alert('Não editavel!!!')
+};
+
+
+
 var button_click = function() {
     var nome = window.document.getElementById('nome').value;
     var idade = window.document.getElementById('idade').value;
@@ -13,13 +19,15 @@ var button_click = function() {
         'idade' : idade,
         'cidade' : cidade,
         'edit' : function() {
-            var edit = document.createElement('td');
+            var editer = document.createElement('td');
             var img = document.createElement('i');
             img.classList.add('bi', 'bi-pencil-fill');
 
-            edit.appendChild(img);
+            editer.appendChild(img);
 
-            return edit;
+            editer.addEventListener('click', editar);
+                
+            return editer;
         }
     }
     
